@@ -3,6 +3,7 @@ import numpy as np
 def unique_rows(array):
 	"""
 	Returns a slice of array that contains only unique rows
+	based on: http://stackoverflow.com/questions/16970982/find-unique-rows-in-numpy-array
 	"""
 	b = np.ascontiguousarray(array).view(np.dtype((np.void, array.dtype.itemsize * array.shape[1])))
 	_, idx = np.unique(b, return_index=True)
