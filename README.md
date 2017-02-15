@@ -6,4 +6,5 @@ A set of convenience functions for NumPy
 
 ## array operations
 `npu.array.unique_rows(array)` returns unique rows of an `array`
+
 `npu.array.groupby(array, column, presorted=True)` returns a list of slices of `array` grouped by the values in the specified `column`
