@@ -25,7 +25,7 @@ def load_dir(directory, prefix=None):
 	optional: prefix - load only files whose name start with prefix
 	works only with 2D arrays
 	"""
-	files = [f for f in os.listdir(directory) if lower(f).endswith('.npy')]
+	files = [f for f in os.listdir(directory) if f.lower().endswith('.npy')]
 	if prefix is not None:
 		files = [f for f in files if f.startswith(prefix)]
 	print files
