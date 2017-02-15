@@ -28,7 +28,6 @@ def load_dir(directory, prefix=None):
 	files = [f for f in os.listdir(directory) if f.lower().endswith('.npy')]
 	if prefix is not None:
 		files = [f for f in files if f.startswith(prefix)]
-	print files
 	shape_0 = 0
 	shapes_1 = set()
 	types = set()
