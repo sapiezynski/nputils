@@ -9,17 +9,15 @@ def unique_rows(array):
 	_, idx = np.unique(b, return_index=True)
 	return array[idx]
 
-def unique_rows_id(array):
+def hash_rows(array):
 	"""
 	given a (N, M) shaped array it returns a (N, ) shaped vector that contains numeric identifiers of unique rows
 	useful for stratifying across multiple variables in sklearn StratifiedKFold
 	"""
-	unique = unique_rows(array)
-	lookup = {tuple(row): idx for idx, row in enumerate(unique)}
-	result = np.zeros((array.shape[0], ), dtype=np.int32)
+	result = np.zeros((array.shape[0], ), dtype=np.int64)
 	for idx, row in enumerate(array):
-		result[idx] = lookup[tuple(row)]
-	return result 
+		result[idx] = hash(tuple(row))
+	return result
 
 def groupby(array, column, as_dict=False, presorted=True):
 	"""
