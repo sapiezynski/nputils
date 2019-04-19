@@ -1,2 +1,2 @@
-import io
-import array
+from . import io
+from . import array
